@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io.connect("https://chat-room-backend-rokm.onrender.com");
+const socket = io.connect("https://chat-room-backend-rokm.onrender.com/");
 
 function App() {
   const [username, setUsername] = useState("");
