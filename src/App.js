@@ -20,25 +20,13 @@ function App() {
 
   return (
     <div className="App">
-       <h1 className="text-center p-2 bg-primary border-light text-light rounded">FUN CHAT APP</h1>
+       <h1 className="text-center p-2 border-light text-light rounded">Chat Application</h1>
       {!showChat ? (
         <div className="joinChatContainer">
-          <h3>Join A Chat</h3>
-          <input
-            type="text"
-            placeholder="Name..."
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="Room ID..."
-            onChange={(event) => {
-              setRoom(event.target.value);
-            }}
-          />
-          <button onClick={joinRoom}>Join A Room</button>
+          <h3>Join the Chat room</h3>
+            <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" placeholder="Room ID" onChange={(e) => setRoom(e.target.value)} />
+            <button onClick={joinRoom}>Join room</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
